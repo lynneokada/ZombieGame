@@ -49,8 +49,7 @@
     int flamethrowerFuel;
     int grenadeCount;
     int kills;
-    int previousHighScore;
-    int multiplier;
+    int currentHighScore;
     
     CCLabelTTF *pistolBullets;
     CCLabelTTF *shotgunBullets;
@@ -386,21 +385,6 @@
     }
 }
 
-- (void) gameOver
-{
-    gameOverNode.visible = YES;
-    hunter.visible = NO;
-    endScore.string = [NSString stringWithFormat:@"%i", (int)kills];
-    
-    if (kills > previousHighScore || previousHighScore == 0)
-    {
-        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-        [prefs setInteger:previousHighScore forKey:@"highscore"];
-        [prefs synchronize];
-        highScore.string = [NSString stringWithFormat:@"%i", (int)kills];
-    }
-}
-
 #pragma COLLISIONS
 //ZOMBIES DON'T CARE ABOUT EACH OTHER
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair northMob:(CCNode *)nodeA westMob:(CCNode *)nodeB
@@ -449,4 +433,38 @@
     [[CCDirector sharedDirector] replaceScene:again withTransition:transition];
 }
 
+
+- (void) gameOver
+{
+    gameOverNode.visible = YES;
+    [physicsNode removeChild:hunter];
+    endScore.string = [NSString stringWithFormat:@"%i", (int)kills];
+    
+    [self loadHighscore];
+    
+    if (kills > currentHighScore)
+    {
+        currentHighScore = kills;
+        highScore.string = [NSString stringWithFormat:@"%i", (int)kills];
+        [self saveHighscore];
+    }
+    highScore.string = [NSString stringWithFormat:@"%i", (int)currentHighScore];
+}
+
+#pragma scoring
+- (void)loadScore {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    kills = [prefs integerForKey:@"score"];
+}
+
+- (void)loadHighscore {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    currentHighScore = [prefs integerForKey:@"highscore"];
+}
+
+- (void)saveHighscore {
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    [prefs setInteger:currentHighScore forKey:@"highscore"];
+    [prefs synchronize];
+}
 @end
