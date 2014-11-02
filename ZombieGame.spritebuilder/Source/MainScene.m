@@ -437,6 +437,7 @@
 - (void) gameOver
 {
     gameOverNode.visible = YES;
+    cursor.visible = NO;
     [physicsNode removeChild:hunter];
     endScore.string = [NSString stringWithFormat:@"%i", (int)kills];
     
