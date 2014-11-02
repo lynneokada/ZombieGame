@@ -360,6 +360,8 @@
     
     CGPoint velocityCursorRight = CGPointMake(cursorSpeedRight, 0);
     CGPoint velocityCursorLeft = CGPointMake(cursorSpeedLeft,0);
+    NSLog(@"SPEEDRIGHT: %f", cursorSpeedRight);
+    NSLog(@"SPEEDLEFT: %f", cursorSpeedLeft);
     
     southMob.position = ccpAdd(southMob.position, velocityUp);
     northMob.position = ccpAdd(northMob.position, velocityDown);
@@ -372,10 +374,18 @@
         cursor.position = ccpAdd(cursor.position, velocityCursorRight);
         if (cursor.position.x >= winSize.width)
         {
-            didHitSide = NO;
-            cursorSpeedRight += 0.5;
-            speedX += 0.01;
-            speedY -= 0.01;
+            if (cursorSpeedLeft > -10.0)
+            {
+                didHitSide = NO;
+                cursorSpeedRight += 0.5;
+                speedX += 0.01;
+                speedY -= 0.01;
+            } else {
+                didHitSide = NO;
+                cursorSpeedRight = 10.0;
+                speedX += 0.01;
+                speedY -= 0.01;
+            }
         }
     }
     else if (didHitSide == NO)
@@ -383,10 +393,18 @@
         cursor.position = ccpAdd(cursor.position, velocityCursorLeft);
         if (cursor.position.x <= 0)
         {
-            didHitSide = YES;
-            cursorSpeedLeft -= 0.5;
-            speedX += 0.01;
-            speedY -= 0.01;
+            if (cursorSpeedRight < 10.0)
+            {
+                didHitSide = YES;
+                cursorSpeedLeft -= 0.5;
+                speedX += 0.01;
+                speedY -= 0.01;
+            } else {
+                didHitSide = YES;
+                cursorSpeedLeft = -10.0;
+                speedX += 0.01;
+                speedY -= 0.01;
+            }
         }
     }
 }
@@ -443,7 +461,7 @@
 - (void) gameOver
 {
     gameOverNode.visible = YES;
-    cursor.visible = NO;
+    //cursor.visible = NO;
     [physicsNode removeChild:hunter];
     endScore.string = [NSString stringWithFormat:@"%i", (int)kills];
     
