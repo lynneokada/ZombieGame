@@ -32,6 +32,8 @@
     CCNode *westMob;
     CCNode *eastMob;
     CCNode *hunter;
+    
+    NSString *equippedWeapon;
 }
 
 - (void) didLoadFromCCB
@@ -48,42 +50,107 @@
     hunter.physicsBody.collisionType = @"hunter";
     
     winSize = [CCDirector sharedDirector].viewSize;
+    equippedWeapon = @"pistol";
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
     CGPoint touchLocation = [touch locationInNode:selectionNode];
     
-    //SHOOT DIRECTION
-    if (CGRectContainsPoint([leftButton boundingBox], touchLocation))
-    {
-        NSLog(@"left button touched");
-        westMob.position = ccpSub(westMob.position, CGPointMake(-0.5,0));
-    } else if (CGRectContainsPoint([rightButton boundingBox], touchLocation))
-    {
-        NSLog(@"right button touched");
-    } else if (CGRectContainsPoint([upButton boundingBox], touchLocation))
-    {
-        NSLog(@"up button touched");
-    } else if (CGRectContainsPoint([downButton boundingBox], touchLocation))
-    {
-        NSLog(@"down button touched");
-    }
-    
     //WEAPON SELECTION
     if (CGRectContainsPoint([pistol boundingBox], touchLocation))
     {
         NSLog(@"pistol equipped");
+        equippedWeapon = @"pistol";
+    } else if (CGRectContainsPoint([shotgun boundingBox], touchLocation))
+    {
+        NSLog(@"shotgun equipped");
+        equippedWeapon = @"shotgun";
+    } else if (CGRectContainsPoint([flamethrower boundingBox], touchLocation))
+    {
+        NSLog(@"flamethrower equipped");
+        equippedWeapon = @"flamethrower";
+    } else if (CGRectContainsPoint([grenade boundingBox], touchLocation))
+    {
+        NSLog(@"grenade equipped");
+        equippedWeapon = @"grenade";
+    }
+    
+    //SHOOT DIRECTION
+    if (CGRectContainsPoint([leftButton boundingBox], touchLocation))
+    {
+        NSLog(@"left button touched");
+        if ([equippedWeapon  isEqual:@"pistol"])
+        {
+        westMob.position = CGPointMake(westMob.position.x - 5, westMob.position.y);
+        } else if ([equippedWeapon isEqualToString:@"shotgun"])
+        {
+            westMob.position = CGPointMake(westMob.position.x - 10, westMob.position.y);
+        } else if ([equippedWeapon isEqualToString:@"flamethrower"])
+        {
+            westMob.position = CGPointMake(westMob.position.x - 20, westMob.position.y);
+        } else if ([equippedWeapon isEqualToString:@"grenade"])
+        {
+            westMob.position = CGPointMake(westMob.position.x - 30, westMob.position.y);
+        }
+    } else if (CGRectContainsPoint([rightButton boundingBox], touchLocation))
+    {
+        NSLog(@"right button touched");
+        if ([equippedWeapon  isEqual:@"pistol"])
+        {
+            eastMob.position = CGPointMake(eastMob.position.x + 5, eastMob.position.y);
+        } else if ([equippedWeapon isEqualToString:@"shotgun"])
+        {
+            eastMob.position = CGPointMake(eastMob.position.x + 10, eastMob.position.y);
+        } else if ([equippedWeapon isEqualToString:@"flamethrower"])
+        {
+            eastMob.position = CGPointMake(eastMob.position.x + 20, eastMob.position.y);
+        } else if ([equippedWeapon isEqualToString:@"grenade"])
+        {
+            eastMob.position = CGPointMake(eastMob.position.x + 30, eastMob.position.y);
+        }
+    } else if (CGRectContainsPoint([upButton boundingBox], touchLocation))
+    {
+        NSLog(@"up button touched");
+        if ([equippedWeapon  isEqual:@"pistol"])
+        {
+            northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 5);
+        } else if ([equippedWeapon isEqualToString:@"shotgun"])
+        {
+            northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 10);
+        } else if ([equippedWeapon isEqualToString:@"flamethrower"])
+        {
+            northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 20);
+        } else if ([equippedWeapon isEqualToString:@"grenade"])
+        {
+            northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 30);
+        }
+    } else if (CGRectContainsPoint([downButton boundingBox], touchLocation))
+    {
+        NSLog(@"down button touched");
+        if ([equippedWeapon  isEqual:@"pistol"])
+        {
+            southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 5);
+        } else if ([equippedWeapon isEqualToString:@"shotgun"])
+        {
+            southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 10);
+        } else if ([equippedWeapon isEqualToString:@"flamethrower"])
+        {
+            southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 20);
+        } else if ([equippedWeapon isEqualToString:@"grenade"])
+        {
+            southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 30);
+        }
     }
 }
 
 - (void) update:(CCTime)delta
 {
     //float gameTime = delta;
-    CGPoint velocityUp = CGPointMake(0, 0.5); // Move up
-    CGPoint velocityDown = CGPointMake(0, -0.5); // Move down
-    CGPoint velocityRight = CGPointMake(0.5, 0); // Move right
-    CGPoint velocityLeft = CGPointMake(-0.5, 0); // Move left
+    CGPoint velocityUp = CGPointMake(0, 0.1); // Move up
+    CGPoint velocityDown = CGPointMake(0, -0.1); // Move down
+    CGPoint velocityRight = CGPointMake(0.1, 0); // Move right
+    CGPoint velocityLeft = CGPointMake(-0.1, 0); // Move left
     
     southMob.position = ccpAdd(southMob.position, velocityUp);
     northMob.position = ccpAdd(northMob.position, velocityDown);
