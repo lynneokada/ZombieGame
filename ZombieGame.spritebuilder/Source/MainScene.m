@@ -40,6 +40,8 @@
     CCNode *hunter;
     
     NSString *equippedWeapon;
+    float cursorSpeedRight;
+    float cursorSpeedLeft;
 }
 
 - (void) didLoadFromCCB
@@ -57,6 +59,8 @@
     
     winSize = [CCDirector sharedDirector].viewSize;
     equippedWeapon = @"pistol";
+    cursorSpeedLeft = -1.0;
+    cursorSpeedRight = 1.0;
 }
 
 - (void)touchBegan:(UITouch *)touch withEvent:(UIEvent *)event
@@ -68,18 +72,34 @@
     {
         NSLog(@"pistol equipped");
         equippedWeapon = @"pistol";
+        pistolCursor.visible = YES;
+        shotgunCursor.visible = NO;
+        flamethrowerCursor.visible = NO;
+        grenadeCursor.visible = NO;
     } else if (CGRectContainsPoint([shotgun boundingBox], touchLocation))
     {
         NSLog(@"shotgun equipped");
         equippedWeapon = @"shotgun";
+        pistolCursor.visible = NO;
+        shotgunCursor.visible = YES;
+        flamethrowerCursor.visible = NO;
+        grenadeCursor.visible = NO;
     } else if (CGRectContainsPoint([flamethrower boundingBox], touchLocation))
     {
         NSLog(@"flamethrower equipped");
         equippedWeapon = @"flamethrower";
+        pistolCursor.visible = NO;
+        shotgunCursor.visible = NO;
+        flamethrowerCursor.visible = YES;
+        grenadeCursor.visible = NO;
     } else if (CGRectContainsPoint([grenade boundingBox], touchLocation))
     {
         NSLog(@"grenade equipped");
         equippedWeapon = @"grenade";
+        pistolCursor.visible = NO;
+        shotgunCursor.visible = NO;
+        flamethrowerCursor.visible = NO;
+        grenadeCursor.visible = YES;
     }
     
     //SHOOT DIRECTION
@@ -158,19 +178,27 @@
     CGPoint velocityRight = CGPointMake(0.1, 0); // Move right
     CGPoint velocityLeft = CGPointMake(-0.1, 0); // Move left
     
+    CGPoint velocituCursorRight = CGPointMake(cursorSpeedRight, 0);
+    CGPoint velocityCursorLeft = CGPointMake(cursorSpeedLeft,0);
+    
     southMob.position = ccpAdd(southMob.position, velocityUp);
     northMob.position = ccpAdd(northMob.position, velocityDown);
     westMob.position = ccpAdd(westMob.position, velocityRight);
     eastMob.position = ccpAdd(eastMob.position, velocityLeft);
     
     //MOVE CURSOR
-    if (cursor.position.x > winSize.width)
-    {
-        cursor.position = ccpAdd(cursor.position, velocityLeft);
-    } else if (cursor.position.x < 0)
-    {
-        cursor.position = ccpAdd(cursor.position, velocityRight);
-    }
+//    if (cursor.position.x < winSize.width)
+//    {
+//        cursor.position = ccpAdd(cursor.position, velocityCursorLeft);
+//        if (cursor.position.x < 0)
+//        {
+//            cursor.position = ccpAdd(cursor.position, velocituCursorRight);
+//        }
+//    }
+//    } else if (cursor.position.x < 0)
+//    {
+//        cursor.position = ccpAdd(cursor.position, velocituCursorRight);
+//    }
 }
 
 - (void) gameOver

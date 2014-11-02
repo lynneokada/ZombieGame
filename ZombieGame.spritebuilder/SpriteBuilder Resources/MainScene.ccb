@@ -1015,14 +1015,6 @@
 						<array>
 							<dict>
 								<key>name</key>
-								<string>visible</string>
-								<key>type</key>
-								<string>Check</string>
-								<key>value</key>
-								<false/>
-							</dict>
-							<dict>
-								<key>name</key>
 								<string>name</string>
 								<key>type</key>
 								<string>StringSimple</string>
@@ -1105,7 +1097,7 @@
 						<key>displayName</key>
 						<string>shotgunCursor</string>
 						<key>memberVarAssignmentName</key>
-						<string></string>
+						<string>shotgunCursor</string>
 						<key>memberVarAssignmentType</key>
 						<integer>1</integer>
 						<key>properties</key>
@@ -1189,6 +1181,8 @@
 								</array>
 							</dict>
 						</array>
+						<key>selected</key>
+						<true/>
 					</dict>
 					<dict>
 						<key>UUID</key>
@@ -1304,6 +1298,14 @@
 						<integer>1</integer>
 						<key>properties</key>
 						<array>
+							<dict>
+								<key>name</key>
+								<string>visible</string>
+								<key>type</key>
+								<string>Check</string>
+								<key>value</key>
+								<false/>
+							</dict>
 							<dict>
 								<key>name</key>
 								<string>name</string>
@@ -1464,8 +1466,6 @@
 								</array>
 							</dict>
 						</array>
-						<key>selected</key>
-						<true/>
 					</dict>
 				</array>
 				<key>customClass</key>
