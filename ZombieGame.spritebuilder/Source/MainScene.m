@@ -47,6 +47,8 @@
     int flamethrowerFuel;
     int grenadeCount;
     int kills;
+    int previousHighScore;
+    int multiplier;
     
     CCLabelTTF *pistolBullets;
     CCLabelTTF *shotgunBullets;
@@ -54,6 +56,9 @@
     CCLabelTTF *grenadeNumber;
     
     CCLabelTTF *currentScore;
+    CCLabelTTF *endScore;
+    CCLabelTTF *highScore;
+    CCNode *againButton;
     
     BOOL didHitSide;
 }
@@ -78,6 +83,7 @@
     cursorSpeedRight = 1.0;
     
     kills = 0;
+    multiplier = 0;
     shotgunAmmo = 30;
     flamethrowerFuel = 10;
     grenadeCount = 10;
@@ -223,6 +229,11 @@
     flamethrowerStuff.string = [NSString stringWithFormat:@"%i", (int)flamethrowerFuel];
     grenadeNumber.string = [NSString stringWithFormat:@"%i", (int)grenadeCount];
     currentScore.string = [NSString stringWithFormat:@"%i", (int)kills];
+    
+    if (gameOverNode.visible == YES)
+    {
+        [self again];
+    }
 }
 
 - (void) update:(CCTime)delta
@@ -264,7 +275,15 @@
 {
     gameOverNode.visible = YES;
     hunter.visible = NO;
+    endScore.string = [NSString stringWithFormat:@"%i", (int)kills];
     
+    if (kills > previousHighScore || previousHighScore == 0)
+    {
+        NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+        [prefs setInteger:previousHighScore forKey:@"highscore"];
+        [prefs synchronize];
+        highScore.string = [NSString stringWithFormat:@"%i", (int)kills];
+    }
 }
 
 #pragma COLLISIONS
@@ -305,6 +324,14 @@
     NSLog(@"dead");
     [self gameOver];
     return FALSE;
+}
+
+- (void) again
+{
+    NSLog(@"AGAIN");
+    CCScene *again = [CCBReader loadAsScene:@"MainScene"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.1f];
+    [[CCDirector sharedDirector] replaceScene:again withTransition:transition];
 }
 
 @end
