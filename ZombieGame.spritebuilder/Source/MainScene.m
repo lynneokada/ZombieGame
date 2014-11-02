@@ -331,7 +331,7 @@
     grenadeNumber.string = [NSString stringWithFormat:@"%i", (int)grenadeCount];
     currentScore.string = [NSString stringWithFormat:@"%i", (int)kills];
     
-    if (gameOverNode.visible == YES)
+    if (againButton.visible == YES)
     {
         [self again];
     }
@@ -445,7 +445,7 @@
 {
     NSLog(@"AGAIN");
     CCScene *again = [CCBReader loadAsScene:@"MainScene"];
-    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.1f];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.3f];
     [[CCDirector sharedDirector] replaceScene:again withTransition:transition];
 }
 
