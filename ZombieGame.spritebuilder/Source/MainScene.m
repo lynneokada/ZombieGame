@@ -27,7 +27,11 @@
     CCNode *flamethrower;
     CCNode *grenade;
     
+    CCNode *cursor;
     CCNode *pistolCursor;
+    CCNode *shotgunCursor;
+    CCNode *flamethrowerCursor;
+    CCNode *grenadeCursor;
     
     CCNode *southMob;
     CCNode *northMob;
@@ -159,6 +163,14 @@
     westMob.position = ccpAdd(westMob.position, velocityRight);
     eastMob.position = ccpAdd(eastMob.position, velocityLeft);
     
+    //MOVE CURSOR
+    if (cursor.position.x > winSize.width)
+    {
+        cursor.position = ccpAdd(cursor.position, velocityLeft);
+    } else if (cursor.position.x < 0)
+    {
+        cursor.position = ccpAdd(cursor.position, velocityRight);
+    }
 }
 
 - (void) gameOver
