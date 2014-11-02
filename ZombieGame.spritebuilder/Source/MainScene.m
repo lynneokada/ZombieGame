@@ -62,6 +62,15 @@
     CCLabelTTF *highScore;
     CCNode *againButton;
     
+    CCNode *leftSelected;
+    CCNode *rightSelected;
+    CCNode *upSelected;
+    CCNode *downSelected;
+    CCNode *pistolSelected;
+    CCNode *shotgunSelected;
+    CCNode *flamethrowerSelected;
+    CCNode *grenadeSelected;
+    
     BOOL didHitSide;
 }
 
@@ -70,6 +79,7 @@
     self.userInteractionEnabled = TRUE;
     didHitSide = NO;
     gameOverNode.visible = NO;
+    pistolSelected.visible = YES;
     physicsNode.collisionDelegate = self;
     //physicsNode.debugDraw = YES;
     
@@ -108,6 +118,11 @@
         shotgunCursor.visible = NO;
         flamethrowerCursor.visible = NO;
         grenadeCursor.visible = NO;
+        
+        pistolSelected.visible = YES;
+        shotgunSelected.visible = NO;
+        flamethrowerSelected.visible = NO;
+        grenadeSelected.visible = NO;
     } else if (CGRectContainsPoint([shotgun boundingBox], touchLocation))
     {
         NSLog(@"shotgun equipped");
@@ -116,6 +131,11 @@
         shotgunCursor.visible = YES;
         flamethrowerCursor.visible = NO;
         grenadeCursor.visible = NO;
+        
+        pistolSelected.visible = NO;
+        shotgunSelected.visible = YES;
+        flamethrowerSelected.visible = NO;
+        grenadeSelected.visible = NO;
     } else if (CGRectContainsPoint([flamethrower boundingBox], touchLocation))
     {
         NSLog(@"flamethrower equipped");
@@ -124,6 +144,11 @@
         shotgunCursor.visible = NO;
         flamethrowerCursor.visible = YES;
         grenadeCursor.visible = NO;
+        
+        pistolSelected.visible = NO;
+        shotgunSelected.visible = NO;
+        flamethrowerSelected.visible = YES;
+        grenadeSelected.visible = NO;
     } else if (CGRectContainsPoint([grenade boundingBox], touchLocation))
     {
         NSLog(@"grenade equipped");
@@ -132,12 +157,18 @@
         shotgunCursor.visible = NO;
         flamethrowerCursor.visible = NO;
         grenadeCursor.visible = YES;
+        
+        pistolSelected.visible = NO;
+        shotgunSelected.visible = NO;
+        flamethrowerSelected.visible = NO;
+        grenadeSelected.visible = YES;
     }
     
     //SHOOT DIRECTION
     if (CGRectContainsPoint([leftButton boundingBox], touchLocation))
     {
         NSLog(@"left button touched");
+        leftSelected.visible = YES;
         if ([equippedWeapon isEqual:@"pistol"])
         {
             if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
@@ -177,6 +208,7 @@
     else if (CGRectContainsPoint([rightButton boundingBox], touchLocation))
     {
         NSLog(@"right button touched");
+        rightSelected.visible = YES;
         if ([equippedWeapon  isEqual:@"pistol"])
         {
             if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
@@ -216,6 +248,7 @@
     else if (CGRectContainsPoint([upButton boundingBox], touchLocation))
     {
         NSLog(@"up button touched");
+        upSelected.visible = YES;
         if ([equippedWeapon  isEqual:@"pistol"])
         {
             if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
@@ -255,6 +288,7 @@
     else if (CGRectContainsPoint([downButton boundingBox], touchLocation))
     {
         NSLog(@"down button touched");
+        downSelected.visible = YES;
         if ([equippedWeapon  isEqual:@"pistol"])
         {
             if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
@@ -301,6 +335,14 @@
     {
         [self again];
     }
+}
+
+- (void)touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    upSelected.visible = NO;
+    downSelected.visible = NO;
+    leftSelected.visible = NO;
+    rightSelected.visible = NO;
 }
 
 - (void) update:(CCTime)delta
