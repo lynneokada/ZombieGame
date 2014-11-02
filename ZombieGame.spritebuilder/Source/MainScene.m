@@ -22,6 +22,11 @@
     CCNode *upButton;
     CCNode *downButton;
     
+    CCNode *pistol;
+    CCNode *shotgun;
+    CCNode *flamethrower;
+    CCNode *grenade;
+    
     CCNode *southMob;
     CCNode *northMob;
     CCNode *westMob;
@@ -49,9 +54,11 @@
 {
     CGPoint touchLocation = [touch locationInNode:selectionNode];
     
+    //SHOOT DIRECTION
     if (CGRectContainsPoint([leftButton boundingBox], touchLocation))
     {
         NSLog(@"left button touched");
+        westMob.position = ccpSub(westMob.position, CGPointMake(-0.5,0));
     } else if (CGRectContainsPoint([rightButton boundingBox], touchLocation))
     {
         NSLog(@"right button touched");
@@ -61,6 +68,12 @@
     } else if (CGRectContainsPoint([downButton boundingBox], touchLocation))
     {
         NSLog(@"down button touched");
+    }
+    
+    //WEAPON SELECTION
+    if (CGRectContainsPoint([pistol boundingBox], touchLocation))
+    {
+        NSLog(@"pistol equipped");
     }
 }
 
