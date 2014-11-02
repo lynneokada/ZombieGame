@@ -130,15 +130,15 @@
         if ([equippedWeapon  isEqual:@"pistol"])
         {
             westMob.position = CGPointMake(westMob.position.x - 5, westMob.position.y);
-        } else if ([equippedWeapon isEqualToString:@"shotgun"])
+        } else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo > 0)
         {
             westMob.position = CGPointMake(westMob.position.x - 10, westMob.position.y);
             shotgunAmmo -= 1;
-        } else if ([equippedWeapon isEqualToString:@"flamethrower"])
+        } else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
             westMob.position = CGPointMake(westMob.position.x - 20, westMob.position.y);
             flamethrowerFuel -= 1;
-        } else if ([equippedWeapon isEqualToString:@"grenade"])
+        } else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
             westMob.position = CGPointMake(westMob.position.x - 30, westMob.position.y);
             grenadeCount -= 1;
@@ -149,15 +149,15 @@
         if ([equippedWeapon  isEqual:@"pistol"])
         {
             eastMob.position = CGPointMake(eastMob.position.x + 5, eastMob.position.y);
-        } else if ([equippedWeapon isEqualToString:@"shotgun"])
+        } else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo > 0)
         {
             eastMob.position = CGPointMake(eastMob.position.x + 10, eastMob.position.y);
             shotgunAmmo -= 1;
-        } else if ([equippedWeapon isEqualToString:@"flamethrower"])
+        } else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
             eastMob.position = CGPointMake(eastMob.position.x + 20, eastMob.position.y);
             flamethrowerFuel -= 1;
-        } else if ([equippedWeapon isEqualToString:@"grenade"])
+        } else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
             eastMob.position = CGPointMake(eastMob.position.x + 30, eastMob.position.y);
             grenadeCount -= 1;
@@ -168,15 +168,15 @@
         if ([equippedWeapon  isEqual:@"pistol"])
         {
             northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 5);
-        } else if ([equippedWeapon isEqualToString:@"shotgun"])
+        } else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo >0)
         {
             northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 10);
             shotgunAmmo -= 1;
-        } else if ([equippedWeapon isEqualToString:@"flamethrower"])
+        } else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
             northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 20);
             flamethrowerFuel -= 1;
-        } else if ([equippedWeapon isEqualToString:@"grenade"])
+        } else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
             northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 30);
             grenadeCount -= 1;
@@ -187,20 +187,23 @@
         if ([equippedWeapon  isEqual:@"pistol"])
         {
             southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 5);
-        } else if ([equippedWeapon isEqualToString:@"shotgun"])
+        } else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo > 0)
         {
             southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 10);
             shotgunAmmo -= 1;
-        } else if ([equippedWeapon isEqualToString:@"flamethrower"])
+        } else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
             southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 20);
             flamethrowerFuel -= 1;
-        } else if ([equippedWeapon isEqualToString:@"grenade"])
+        } else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
             southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 30);
             grenadeCount -= 1;
         }
     }
+    shotgunBullets.string = [NSString stringWithFormat:@"%i", (int)shotgunAmmo];
+    flamethrowerStuff.string = [NSString stringWithFormat:@"%i", (int)flamethrowerFuel];
+    grenadeNumber.string = [NSString stringWithFormat:@"%i", (int)grenadeCount];
 }
 
 - (void) update:(CCTime)delta
