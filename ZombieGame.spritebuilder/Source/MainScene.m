@@ -83,7 +83,6 @@
     cursorSpeedRight = 1.0;
     
     kills = 0;
-    multiplier = 0;
     shotgunAmmo = 30;
     flamethrowerFuel = 10;
     grenadeCount = 10;
@@ -148,27 +147,27 @@
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
                 westMob.position = CGPointMake(westMob.position.x - 10, westMob.position.y);
-                shotgunAmmo -= 1;
                 kills += 5;
             }
+            shotgunAmmo -= 1;
         }
         else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
                 westMob.position = CGPointMake(westMob.position.x - 20, westMob.position.y);
-                flamethrowerFuel -= 1;
                 kills += 10;
             }
+            flamethrowerFuel -= 1;
         }
         else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
                 westMob.position = CGPointMake(westMob.position.x - 30, westMob.position.y);
-                grenadeCount -= 1;
                 kills += 15;
             }
+            grenadeCount -= 1;
         }
     }
     else if (CGRectContainsPoint([rightButton boundingBox], touchLocation))
@@ -187,27 +186,27 @@
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
                 eastMob.position = CGPointMake(eastMob.position.x + 10, eastMob.position.y);
-                shotgunAmmo -= 1;
                 kills += 5;
             }
+            shotgunAmmo -= 1;
         }
         else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
                 eastMob.position = CGPointMake(eastMob.position.x + 20, eastMob.position.y);
-                flamethrowerFuel -= 1;
                 kills += 10;
             }
+            flamethrowerFuel -= 1;
         }
         else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
                 eastMob.position = CGPointMake(eastMob.position.x + 30, eastMob.position.y);
-                grenadeCount -= 1;
                 kills += 15;
             }
+            grenadeCount -= 1;
         }
     }
     else if (CGRectContainsPoint([upButton boundingBox], touchLocation))
@@ -226,27 +225,27 @@
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
                 northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 10);
-                shotgunAmmo -= 1;
                 kills += 5;
             }
+            shotgunAmmo -= 1;
         }
         else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
                 northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 20);
-                flamethrowerFuel -= 1;
                 kills += 10;
             }
+            flamethrowerFuel -= 1;
         }
         else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
                 northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 30);
-                grenadeCount -= 1;
                 kills += 15;
             }
+            grenadeCount -= 1;
         }
     }
     else if (CGRectContainsPoint([downButton boundingBox], touchLocation))
@@ -265,29 +264,30 @@
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
                 southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 10);
-                shotgunAmmo -= 1;
                 kills += 5;
             }
+            shotgunAmmo -= 1;
         }
         else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
                 southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 20);
-                flamethrowerFuel -= 1;
                 kills += 10;
             }
+            flamethrowerFuel -= 1;
         }
         else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
                 southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 30);
-                grenadeCount -= 1;
                 kills += 15;
             }
+            grenadeCount -= 1;
         }
     }
+    
     shotgunBullets.string = [NSString stringWithFormat:@"%i", (int)shotgunAmmo];
     flamethrowerStuff.string = [NSString stringWithFormat:@"%i", (int)flamethrowerFuel];
     grenadeNumber.string = [NSString stringWithFormat:@"%i", (int)grenadeCount];
