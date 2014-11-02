@@ -53,11 +53,14 @@
     CCLabelTTF *grenadeNumber;
     
     CCLabelTTF *currentScore;
+    
+    BOOL didHitSide;
 }
 
 - (void) didLoadFromCCB
 {
     self.userInteractionEnabled = TRUE;
+    didHitSide = NO;
     gameOverNode.visible = NO;
     physicsNode.collisionDelegate = self;
     //physicsNode.debugDraw = YES;
@@ -208,7 +211,7 @@
     CGPoint velocityRight = CGPointMake(0.1, 0); // Move right
     CGPoint velocityLeft = CGPointMake(-0.1, 0); // Move left
     
-    CGPoint velocituCursorRight = CGPointMake(cursorSpeedRight, 0);
+    CGPoint velocityCursorRight = CGPointMake(cursorSpeedRight, 0);
     CGPoint velocityCursorLeft = CGPointMake(cursorSpeedLeft,0);
     
     southMob.position = ccpAdd(southMob.position, velocityUp);
@@ -217,18 +220,22 @@
     eastMob.position = ccpAdd(eastMob.position, velocityLeft);
     
     //MOVE CURSOR
-//    if (cursor.position.x < winSize.width)
-//    {
-//        cursor.position = ccpAdd(cursor.position, velocityCursorLeft);
-//        if (cursor.position.x < 0)
-//        {
-//            cursor.position = ccpAdd(cursor.position, velocituCursorRight);
-//        }
-//    }
-//    } else if (cursor.position.x < 0)
-//    {
-//        cursor.position = ccpAdd(cursor.position, velocituCursorRight);
-//    }
+    if (didHitSide == YES)
+    {
+        cursor.position = ccpAdd(cursor.position, velocityCursorRight);
+        if (cursor.position.x >= winSize.width)
+        {
+        didHitSide = NO;
+        }
+    }
+    else if (didHitSide == NO)
+    {
+        cursor.position = ccpAdd(cursor.position, velocityCursorLeft);
+        if (cursor.position.x <= 0)
+        {
+        didHitSide = YES;
+        }
+    }
 }
 
 - (void) gameOver
