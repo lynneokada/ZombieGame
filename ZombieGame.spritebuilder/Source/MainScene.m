@@ -135,10 +135,13 @@
     if (CGRectContainsPoint([leftButton boundingBox], touchLocation))
     {
         NSLog(@"left button touched");
-        if ([equippedWeapon  isEqual:@"pistol"])
+        if ([equippedWeapon isEqual:@"pistol"])
         {
-            westMob.position = CGPointMake(westMob.position.x - 5, westMob.position.y);
-            kills += 2;
+            if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
+            {
+                westMob.position = CGPointMake(westMob.position.x - 5, westMob.position.y);
+                kills += 2;
+            }
         } else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo > 0)
         {
             westMob.position = CGPointMake(westMob.position.x - 10, westMob.position.y);
@@ -160,8 +163,11 @@
         NSLog(@"right button touched");
         if ([equippedWeapon  isEqual:@"pistol"])
         {
-            eastMob.position = CGPointMake(eastMob.position.x + 5, eastMob.position.y);
-            kills += 2;
+            if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
+            {
+                eastMob.position = CGPointMake(eastMob.position.x + 5, eastMob.position.y);
+                kills += 2;
+            }
         } else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo > 0)
         {
             eastMob.position = CGPointMake(eastMob.position.x + 10, eastMob.position.y);
@@ -183,8 +189,11 @@
         NSLog(@"up button touched");
         if ([equippedWeapon  isEqual:@"pistol"])
         {
-            northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 5);
-            kills += 2;
+            if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
+            {
+                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 5);
+                kills += 2;
+            }
         } else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo >0)
         {
             northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 10);
@@ -206,8 +215,11 @@
         NSLog(@"down button touched");
         if ([equippedWeapon  isEqual:@"pistol"])
         {
-            southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 5);
-            kills += 2;
+            if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
+            {
+                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 5);
+                kills += 2;
+            }
         } else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo > 0)
         {
             southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 10);
