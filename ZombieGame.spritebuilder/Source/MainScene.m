@@ -238,7 +238,7 @@
 
 - (void) update:(CCTime)delta
 {
-    //float gameTime = delta;
+    
     CGPoint velocityUp = CGPointMake(0, 0.1); // Move up
     CGPoint velocityDown = CGPointMake(0, -0.1); // Move down
     CGPoint velocityRight = CGPointMake(0.1, 0); // Move right
@@ -258,7 +258,8 @@
         cursor.position = ccpAdd(cursor.position, velocityCursorRight);
         if (cursor.position.x >= winSize.width)
         {
-        didHitSide = NO;
+            didHitSide = NO;
+            cursorSpeedRight += 0.5;
         }
     }
     else if (didHitSide == NO)
@@ -266,7 +267,8 @@
         cursor.position = ccpAdd(cursor.position, velocityCursorLeft);
         if (cursor.position.x <= 0)
         {
-        didHitSide = YES;
+            didHitSide = YES;
+            cursorSpeedLeft -= 0.5;
         }
     }
 }
