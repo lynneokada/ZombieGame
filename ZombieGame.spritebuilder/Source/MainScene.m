@@ -27,6 +27,8 @@
     CCNode *flamethrower;
     CCNode *grenade;
     
+    CCNode *pistolCursor;
+    
     CCNode *southMob;
     CCNode *northMob;
     CCNode *westMob;
@@ -41,7 +43,7 @@
     self.userInteractionEnabled = TRUE;
     gameOverNode.visible = NO;
     physicsNode.collisionDelegate = self;
-    physicsNode.debugDraw = YES;
+    //physicsNode.debugDraw = YES;
     
     northMob.physicsBody.collisionType = @"northMob";
     southMob.physicsBody.collisionType = @"southMob";
@@ -157,7 +159,6 @@
     westMob.position = ccpAdd(westMob.position, velocityRight);
     eastMob.position = ccpAdd(eastMob.position, velocityLeft);
     
-    //NSLog(@"southmobX: %f, southmobY: %f", southMob.position.x, southMob.position.y);
 }
 
 - (void) gameOver
@@ -199,7 +200,7 @@
     return FALSE;
 }
 
-//SO DEAD
+//YOU DEAD
 - (BOOL)ccPhysicsCollisionBegin:(CCPhysicsCollisionPair *)pair hunter:(CCNode *)nodeA wildcard:(CCNode *)nodeB
 {
     NSLog(@"dead");
