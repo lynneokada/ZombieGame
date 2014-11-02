@@ -71,6 +71,7 @@
     CCNode *grenadeSelected;
     
     BOOL didHitSide;
+    CCNode *flash;
 }
 
 - (void) didLoadFromCCB
@@ -166,6 +167,7 @@
     //SHOOT DIRECTION
     if (CGRectContainsPoint([leftButton boundingBox], touchLocation))
     {
+        flash.visible = YES;
         NSLog(@"left button touched");
         leftSelected.visible = YES;
         if ([equippedWeapon isEqual:@"pistol"])
@@ -180,7 +182,7 @@
         {
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
-                westMob.position = CGPointMake(westMob.position.x - 10, westMob.position.y);
+                westMob.position = CGPointMake(westMob.position.x - 20, westMob.position.y);
                 kills += 3;
             }
             shotgunAmmo -= 1;
@@ -189,7 +191,7 @@
         {
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
-                westMob.position = CGPointMake(westMob.position.x - 20, westMob.position.y);
+                westMob.position = CGPointMake(westMob.position.x - 30, westMob.position.y);
                 kills += 5;
             }
             flamethrowerFuel -= 1;
@@ -198,7 +200,7 @@
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
-                westMob.position = CGPointMake(westMob.position.x - 30, westMob.position.y);
+                westMob.position = CGPointMake(westMob.position.x - 50, westMob.position.y);
                 kills += 10;
             }
             grenadeCount -= 1;
@@ -206,6 +208,7 @@
     }
     else if (CGRectContainsPoint([rightButton boundingBox], touchLocation))
     {
+        flash.visible = YES;
         NSLog(@"right button touched");
         rightSelected.visible = YES;
         if ([equippedWeapon  isEqual:@"pistol"])
@@ -220,7 +223,7 @@
         {
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
-                eastMob.position = CGPointMake(eastMob.position.x + 10, eastMob.position.y);
+                eastMob.position = CGPointMake(eastMob.position.x + 20, eastMob.position.y);
                 kills += 3;
             }
             shotgunAmmo -= 1;
@@ -229,7 +232,7 @@
         {
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
-                eastMob.position = CGPointMake(eastMob.position.x + 20, eastMob.position.y);
+                eastMob.position = CGPointMake(eastMob.position.x + 30, eastMob.position.y);
                 kills += 5;
             }
             flamethrowerFuel -= 1;
@@ -238,7 +241,7 @@
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
-                eastMob.position = CGPointMake(eastMob.position.x + 30, eastMob.position.y);
+                eastMob.position = CGPointMake(eastMob.position.x + 50, eastMob.position.y);
                 kills += 10;
             }
             grenadeCount -= 1;
@@ -246,6 +249,7 @@
     }
     else if (CGRectContainsPoint([upButton boundingBox], touchLocation))
     {
+        flash.visible = YES;
         NSLog(@"up button touched");
         upSelected.visible = YES;
         if ([equippedWeapon  isEqual:@"pistol"])
@@ -260,7 +264,7 @@
         {
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
-                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 10);
+                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 20);
                 kills += 3;
             }
             shotgunAmmo -= 1;
@@ -269,7 +273,7 @@
         {
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
-                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 20);
+                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 30);
                 kills += 5;
             }
             flamethrowerFuel -= 1;
@@ -278,7 +282,7 @@
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
-                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 30);
+                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 50);
                 kills += 10;
             }
             grenadeCount -= 1;
@@ -286,6 +290,7 @@
     }
     else if (CGRectContainsPoint([downButton boundingBox], touchLocation))
     {
+        flash.visible = YES;
         NSLog(@"down button touched");
         downSelected.visible = YES;
         if ([equippedWeapon  isEqual:@"pistol"])
@@ -300,7 +305,7 @@
         {
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
-                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 10);
+                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 20);
                 kills += 3;
             }
             shotgunAmmo -= 1;
@@ -309,7 +314,7 @@
         {
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
-                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 20);
+                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 30);
                 kills += 5;
             }
             flamethrowerFuel -= 1;
@@ -318,7 +323,7 @@
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
-                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 30);
+                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 50);
                 kills += 10;
             }
             grenadeCount -= 1;
@@ -342,6 +347,7 @@
     downSelected.visible = NO;
     leftSelected.visible = NO;
     rightSelected.visible = NO;
+    flash.visible = NO;
 }
 
 - (void) update:(CCTime)delta
