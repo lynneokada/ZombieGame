@@ -200,7 +200,10 @@
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
-                westMob.position = CGPointMake(westMob.position.x - 50, westMob.position.y);
+                westMob.position = CGPointMake(westMob.position.x - 70, westMob.position.y);
+                eastMob.position = CGPointMake(eastMob.position.x + 70, eastMob.position.y);
+                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 70);
+                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 70);
                 kills += 10;
             }
             grenadeCount -= 1;
@@ -241,7 +244,10 @@
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
-                eastMob.position = CGPointMake(eastMob.position.x + 50, eastMob.position.y);
+                westMob.position = CGPointMake(westMob.position.x - 70, westMob.position.y);
+                eastMob.position = CGPointMake(eastMob.position.x + 70, eastMob.position.y);
+                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 70);
+                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 70);
                 kills += 10;
             }
             grenadeCount -= 1;
@@ -282,7 +288,10 @@
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
-                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 50);
+                westMob.position = CGPointMake(westMob.position.x - 70, westMob.position.y);
+                eastMob.position = CGPointMake(eastMob.position.x + 70, eastMob.position.y);
+                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 70);
+                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 70);
                 kills += 10;
             }
             grenadeCount -= 1;
@@ -323,7 +332,10 @@
         {
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
-                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 50);
+                westMob.position = CGPointMake(westMob.position.x - 70, westMob.position.y);
+                eastMob.position = CGPointMake(eastMob.position.x + 70, eastMob.position.y);
+                northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 70);
+                southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 70);
                 kills += 10;
             }
             grenadeCount -= 1;
@@ -357,11 +369,11 @@
     CGPoint velocityDown = CGPointMake(0, speedY); // Move down
     CGPoint velocityRight = CGPointMake(speedX, 0); // Move right
     CGPoint velocityLeft = CGPointMake(speedY, 0); // Move left
+    NSLog(@"speedX: %f", speedX);
+    NSLog(@"speedY: %f", speedY);
     
     CGPoint velocityCursorRight = CGPointMake(cursorSpeedRight, 0);
     CGPoint velocityCursorLeft = CGPointMake(cursorSpeedLeft,0);
-    NSLog(@"SPEEDRIGHT: %f", cursorSpeedRight);
-    NSLog(@"SPEEDLEFT: %f", cursorSpeedLeft);
     
     southMob.position = ccpAdd(southMob.position, velocityUp);
     northMob.position = ccpAdd(northMob.position, velocityDown);
@@ -378,13 +390,27 @@
             {
                 didHitSide = NO;
                 cursorSpeedRight += 0.5;
-                speedX += 0.01;
-                speedY -= 0.01;
+                if (speedX > 0.3 || speedY < -0.3)
+                {
+                    speedX = 0.3;
+                    speedY = -0.3;
+                } else {
+                    speedX += 0.1;
+                    speedY -= 0.1;
+                }
+
             } else {
                 didHitSide = NO;
                 cursorSpeedRight = 10.0;
-                speedX += 0.01;
-                speedY -= 0.01;
+                if (speedX > 0.3 || speedY < -0.3)
+                {
+                    speedX = 0.3;
+                    speedY = -0.3;
+                } else {
+                    speedX += 0.1;
+                    speedY -= 0.1;
+                }
+
             }
         }
     }
@@ -397,13 +423,27 @@
             {
                 didHitSide = YES;
                 cursorSpeedLeft -= 0.5;
-                speedX += 0.01;
-                speedY -= 0.01;
+                if (speedX > 0.3 || speedY < -0.3)
+                {
+                    speedX = 0.3;
+                    speedY = -0.3;
+                } else {
+                    speedX += 0.1;
+                    speedY -= 0.1;
+                }
+
             } else {
                 didHitSide = YES;
                 cursorSpeedLeft = -10.0;
-                speedX += 0.01;
-                speedY -= 0.01;
+                if (speedX > 0.3 || speedY < -0.3)
+                {
+                    speedX = 0.3;
+                    speedY = -0.3;
+                } else {
+                    speedX += 0.1;
+                    speedY -= 0.1;
+                }
+
             }
         }
     }
