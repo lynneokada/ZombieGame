@@ -59,7 +59,13 @@
 
 - (CCScene*) startScene
 {
+    
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/pistolSound.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/shotgunSound.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/flamethrowerSound.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/grenadeSound.wav"];
     return [CCBReader loadAsScene:@"MainScene"];
+    
 }
 
 @end
