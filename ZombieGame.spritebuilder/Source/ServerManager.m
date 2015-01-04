@@ -8,15 +8,35 @@
 
 #import "ServerManager.h"
 
-@implementation ServerManager 
+@implementation ServerManager
 
-- (void) postScore:(MainScene *)score andusername:(MainScene *)username {
++ (instancetype) sharedManager
+{
+    static ServerManager *sharedManager = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedManager = [[self alloc] init];
+    });
+    return sharedManager;
+}
+
+- (instancetype) init
+{
+    if (self = [super init])
+    {
+        
+    }
+    return self;
+}
+
+- (void) postScore:(NSString *)score andusername:(NSString *)username
+{
     NSDictionary *post = @{
                             @"username":username,
                             @"score":score
                             };
     
-    NSURL *url = [NSURL URLWithString:@"shrouded-plains-6422.herokuapp.com/score"];
+    NSURL *url = [NSURL URLWithString:@"https://shrouded-plains-6422.herokuapp.com/score"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
     [request setHTTPMethod:@"POST"];
     

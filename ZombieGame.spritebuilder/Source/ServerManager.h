@@ -11,6 +11,8 @@
 
 @interface ServerManager : NSObject <NSURLSessionDataDelegate>
 
-- (void) postScore:(MainScene *)score andusername:(MainScene *)username;
++ (instancetype) sharedManager;
+
+- (void) postScore:(NSString *)score andusername:(NSString *)username;
 
 @end

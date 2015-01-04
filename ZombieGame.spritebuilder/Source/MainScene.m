@@ -8,6 +8,7 @@
 
 #import "MainScene.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
+#import "ServerManager.h"
 
 @implementation MainScene
 {
@@ -531,6 +532,7 @@
     submitNode.visible = NO;
     NSString *name = _inputName.string;
     NSLog(@"%@",name);
+    [[ServerManager sharedManager] postScore:_submitScore.string andusername:name];
     globalScoreNode.visible = YES;
 }
 
