@@ -15,6 +15,7 @@
     CCNode *selectionNode;
     CCNode *contentNode;
     CCNode *gameOverNode;
+    CCNode *submitNode;
     CCPhysicsNode *physicsNode;
     
     CCNode *leftButton;
@@ -60,6 +61,9 @@
     CCLabelTTF *endScore;
     CCLabelTTF *highScore;
     CCNode *againButton;
+    
+    CCLabelTTF *submitScore;
+    CCTextField *inputName;
     
     CCNode *leftSelected;
     CCNode *rightSelected;
@@ -385,8 +389,8 @@
     CGPoint velocityDown = CGPointMake(0, speedY); // Move down
     CGPoint velocityRight = CGPointMake(speedX, 0); // Move right
     CGPoint velocityLeft = CGPointMake(speedY, 0); // Move left
-    NSLog(@"speedX: %f", speedX);
-    NSLog(@"speedY: %f", speedY);
+    //NSLog(@"speedX: %f", speedX);
+    //NSLog(@"speedY: %f", speedY);
     
     CGPoint velocityCursorRight = CGPointMake(cursorSpeedRight, 0);
     CGPoint velocityCursorLeft = CGPointMake(cursorSpeedLeft,0);
@@ -513,6 +517,21 @@
     [[CCDirector sharedDirector] replaceScene:again withTransition:transition];
 }
 
+- (void) submit {
+    gameOverNode.visible = NO;
+    submitNode.visible = YES;
+    submitScore.string = [NSString stringWithFormat:@"%i", (int)kills];
+}
+
+- (void)buttonText:(CCTextField*)sender {
+    NSLog(@"pressed");
+}
+
+- (void) submitt {
+    submitNode.visible = NO;
+    NSString *name = inputName.string;
+    NSLog(@"%@",name);
+}
 
 - (void) gameOver
 {
