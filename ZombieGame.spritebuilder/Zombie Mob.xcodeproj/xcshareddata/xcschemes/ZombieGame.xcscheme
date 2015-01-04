@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
                BuildableName = "ZombieGame.app"
-               BlueprintName = "ZombieGame"
-               ReferencedContainer = "container:ZombieGame.xcodeproj">
+               BlueprintName = "Zombie Mob"
+               ReferencedContainer = "container:Zombie Mob.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
             BuildableName = "ZombieGame.app"
-            BlueprintName = "ZombieGame"
-            ReferencedContainer = "container:ZombieGame.xcodeproj">
+            BlueprintName = "Zombie Mob"
+            ReferencedContainer = "container:Zombie Mob.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -48,13 +48,14 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
             BuildableName = "ZombieGame.app"
-            BlueprintName = "ZombieGame"
-            ReferencedContainer = "container:ZombieGame.xcodeproj">
+            BlueprintName = "Zombie Mob"
+            ReferencedContainer = "container:Zombie Mob.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,13 +72,14 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
             BuildableName = "ZombieGame.app"
-            BlueprintName = "ZombieGame"
-            ReferencedContainer = "container:ZombieGame.xcodeproj">
+            BlueprintName = "Zombie Mob"
+            ReferencedContainer = "container:Zombie Mob.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
