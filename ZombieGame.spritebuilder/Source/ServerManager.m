@@ -31,6 +31,7 @@
 
 - (void) postScore:(NSString *)score andusername:(NSString *)username
 {
+    NSLog(@"NAME:%@, SCORE:%@", username,score);
     NSDictionary *post = @{
                             @"username":username,
                             @"score":score
