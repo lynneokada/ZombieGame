@@ -16,6 +16,7 @@
     CCNode *contentNode;
     CCNode *gameOverNode;
     CCNode *submitNode;
+    CCNode *globalScoreNode;
     CCPhysicsNode *physicsNode;
     
     CCNode *leftButton;
@@ -62,6 +63,7 @@
     CCLabelTTF *highScore;
     CCNode *againButton;
     
+    CCScrollView *scrollableNode;
     CCLabelTTF *submitScore;
     CCTextField *inputName;
     
@@ -531,6 +533,15 @@
     submitNode.visible = NO;
     NSString *name = inputName.string;
     NSLog(@"%@",name);
+    globalScoreNode.visible = YES;
+}
+
+- (void) exit {
+    globalScoreNode.visible = NO;
+    CCScene *again = [CCBReader loadAsScene:@"MainScene"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.3f];
+    [[CCDirector sharedDirector] replaceScene:again withTransition:transition];
+
 }
 
 - (void) gameOver
