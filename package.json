@@ -1,0 +1,16 @@
+{
+  "name": "LynneOkad",
+  "version": "1.0.0",
+  "description": "leaderboard for this game!",
+  "main": "ZombieMobServer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LynneOkada",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.0.2",
+    "express": "^4.9.7",
+    "mongoskin": "^1.4.1"
+  }
+}
