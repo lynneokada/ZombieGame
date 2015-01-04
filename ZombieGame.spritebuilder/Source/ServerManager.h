@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "MainScene.h"
 
-@interface ServerManager : NSObject
+@interface ServerManager : NSObject <NSURLSessionDataDelegate>
+
+- (void) postScore:(MainScene *)score andusername:(MainScene *)username;
 
 @end

@@ -10,4 +10,7 @@
 
 @interface MainScene : CCNode <CCPhysicsCollisionDelegate>
 
+@property (nonatomic, retain) CCLabelTTF *submitScore;
+@property (nonatomic, retain) CCTextField *inputName;
+
 @end

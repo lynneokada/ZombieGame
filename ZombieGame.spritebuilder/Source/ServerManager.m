@@ -8,10 +8,15 @@
 
 #import "ServerManager.h"
 
-@implementation ServerManager
+@implementation ServerManager 
 
-- (void) postScore {
-
+- (void) postScore:(MainScene *)score andusername:(MainScene *)username {
+    NSDictionary *post = @{
+                            @"username":username,
+                            @"score":score
+                            };
+    
+    
 }
 
 @end

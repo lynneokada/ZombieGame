@@ -64,8 +64,6 @@
     CCNode *againButton;
     
     CCScrollView *scrollableNode;
-    CCLabelTTF *submitScore;
-    CCTextField *inputName;
     
     CCNode *leftSelected;
     CCNode *rightSelected;
@@ -522,7 +520,7 @@
 - (void) submit {
     gameOverNode.visible = NO;
     submitNode.visible = YES;
-    submitScore.string = [NSString stringWithFormat:@"%i", (int)kills];
+    _submitScore.string = [NSString stringWithFormat:@"%i", (int)kills];
 }
 
 - (void)buttonText:(CCTextField*)sender {
@@ -531,7 +529,7 @@
 
 - (void) submitt {
     submitNode.visible = NO;
-    NSString *name = inputName.string;
+    NSString *name = _inputName.string;
     NSLog(@"%@",name);
     globalScoreNode.visible = YES;
 }
