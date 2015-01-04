@@ -14,8 +14,8 @@ var db = mongoskin.db(process.env.MONGOHQ_URL, {safe:true})
 
 app.post('/score', function(req, res)
 {
+  console.log("meow")
   var score = db.collection("scores")
-  req.body.mongoUser_id = new mongoskin.ObjectID(req.body.mongoUser_id)
 
   score.insert(req.body, {}, function(e, results)
 {

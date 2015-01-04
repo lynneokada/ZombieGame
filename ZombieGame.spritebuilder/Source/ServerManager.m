@@ -37,7 +37,7 @@
                             @"score":score
                             };
     
-    NSURL *url = [NSURL URLWithString:@"https://shrouded-plains-6422.herokuapp.com/score"];
+    NSURL *url = [NSURL URLWithString:@"https://zombie-mob.herokuapp.com/score"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:30.0];
     [request setHTTPMethod:@"POST"];
     
