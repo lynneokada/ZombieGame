@@ -54,6 +54,9 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+    [[GameCenterManager sharedManager] setupManager];
+    [[GameCenterManager sharedManager] setDelegate:self];
+    
     return YES;
 }
 
@@ -64,8 +67,23 @@
     [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/shotgunSound.wav"];
     [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/flamethrowerSound.wav"];
     [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/grenadeSound.wav"];
-    return [CCBReader loadAsScene:@"MainScene"];
+    return [CCBReader loadAsScene:@"MenuScene"];
     
 }
+
+- (void) gameCenterManager:(GameCenterManager *)manager authenticateUser:(UIViewController *)gameCenterLoginController
+{
+    
+}
+
+//- (void) gameCenterManager:(GameCenterManager *)manager availabilityChanged:(NSDictionary *)availabilityInformation
+//{
+//    
+//}
+//
+//- (void) gameCenterManager:(GameCenterManager *)manager error:(NSError *)error
+//{
+//    
+//}
 
 @end

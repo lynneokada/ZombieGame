@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-               BuildableName = "ZombieGame.app"
+               BuildableName = "Zombie Mob.app"
                BlueprintName = "Zombie Mob"
                ReferencedContainer = "container:Zombie Mob.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "ZombieGame.app"
+            BuildableName = "Zombie Mob.app"
             BlueprintName = "Zombie Mob"
             ReferencedContainer = "container:Zombie Mob.xcodeproj">
          </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "ZombieGame.app"
+            BuildableName = "Zombie Mob.app"
             BlueprintName = "Zombie Mob"
             ReferencedContainer = "container:Zombie Mob.xcodeproj">
          </BuildableReference>
@@ -77,7 +77,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B77F1B2D17B978D7009739AE"
-            BuildableName = "ZombieGame.app"
+            BuildableName = "Zombie Mob.app"
             BlueprintName = "Zombie Mob"
             ReferencedContainer = "container:Zombie Mob.xcodeproj">
          </BuildableReference>

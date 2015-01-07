@@ -24,6 +24,10 @@
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		D21318311A58FE1C00A25DB2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21318301A58FE1C00A25DB2 /* Images.xcassets */; };
 		D213183E1A592C2E00A25DB2 /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D213183D1A592C2E00A25DB2 /* ServerManager.m */; };
+		D247F9CD1A5CCA1100A053BD /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D247F9CC1A5CCA1100A053BD /* GameKit.framework */; };
+		D247F9D31A5CCA2000A053BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D247F9D21A5CCA2000A053BD /* SystemConfiguration.framework */; };
+		D247F9D51A5CCA2800A053BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D247F9D41A5CCA2800A053BD /* Security.framework */; };
+		D247F9E21A5D0B0000A053BD /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D247F9E11A5D0B0000A053BD /* MenuScene.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +92,11 @@
 		D21318301A58FE1C00A25DB2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../ZombieMob/Images.xcassets; sourceTree = "<group>"; };
 		D213183C1A592C2E00A25DB2 /* ServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerManager.h; path = Source/ServerManager.h; sourceTree = "<group>"; };
 		D213183D1A592C2E00A25DB2 /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerManager.m; path = Source/ServerManager.m; sourceTree = "<group>"; };
+		D247F9CC1A5CCA1100A053BD /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
+		D247F9D21A5CCA2000A053BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D247F9D41A5CCA2800A053BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D247F9E01A5D0B0000A053BD /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
+		D247F9E11A5D0B0000A053BD /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +104,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D247F9D51A5CCA2800A053BD /* Security.framework in Frameworks */,
+				D247F9D31A5CCA2000A053BD /* SystemConfiguration.framework in Frameworks */,
+				D247F9CD1A5CCA1100A053BD /* GameKit.framework in Frameworks */,
 				8392007A18EE8E3300B6C429 /* GLKit.framework in Frameworks */,
 				B737898A1807642B0076A88C /* libcocos2d.a in Frameworks */,
 				B77F1B3217B978D7009739AE /* QuartzCore.framework in Frameworks */,
@@ -125,6 +137,8 @@
 			children = (
 				B737893D1807617C0076A88C /* AppDelegate.h */,
 				B737893E1807617C0076A88C /* AppDelegate.m */,
+				D247F9E01A5D0B0000A053BD /* MenuScene.h */,
+				D247F9E11A5D0B0000A053BD /* MenuScene.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
 				D213183C1A592C2E00A25DB2 /* ServerManager.h */,
@@ -167,6 +181,9 @@
 		B77F1B3017B978D7009739AE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D247F9D41A5CCA2800A053BD /* Security.framework */,
+				D247F9D21A5CCA2000A053BD /* SystemConfiguration.framework */,
+				D247F9CC1A5CCA1100A053BD /* GameKit.framework */,
 				8392007918EE8E3300B6C429 /* GLKit.framework */,
 				B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */,
 				B77F1B3117B978D7009739AE /* QuartzCore.framework */,
@@ -330,6 +347,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D247F9E21A5D0B0000A053BD /* MenuScene.m in Sources */,
 				D213183E1A592C2E00A25DB2 /* ServerManager.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
