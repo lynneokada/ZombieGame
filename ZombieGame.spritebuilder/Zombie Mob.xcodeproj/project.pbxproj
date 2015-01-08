@@ -23,17 +23,13 @@
 		B77F1B4017B978D7009739AE /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B3F17B978D7009739AE /* CoreGraphics.framework */; };
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		D21318311A58FE1C00A25DB2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21318301A58FE1C00A25DB2 /* Images.xcassets */; };
-
-		D213183E1A592C2E00A25DB2 /* ServerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D213183D1A592C2E00A25DB2 /* ServerManager.m */; };
 		D247F9CD1A5CCA1100A053BD /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D247F9CC1A5CCA1100A053BD /* GameKit.framework */; };
 		D247F9D31A5CCA2000A053BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D247F9D21A5CCA2000A053BD /* SystemConfiguration.framework */; };
 		D247F9D51A5CCA2800A053BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D247F9D41A5CCA2800A053BD /* Security.framework */; };
 		D247F9E21A5D0B0000A053BD /* MenuScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D247F9E11A5D0B0000A053BD /* MenuScene.m */; };
-
 		D2EA2F081A5DCC61004103FC /* GameCenterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EA2F031A5DCC61004103FC /* GameCenterManager.m */; };
 		D2EA2F091A5DCC61004103FC /* NSDataAES256.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EA2F051A5DCC61004103FC /* NSDataAES256.m */; };
 		D2EA2F0A1A5DCC61004103FC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D2EA2F071A5DCC61004103FC /* Reachability.m */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,23 +92,17 @@
 		B77F1B4117B978D7009739AE /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		B7B3713D180358F1007369CC /* libObjectiveChipmunk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libObjectiveChipmunk.a; path = "../libs/cocos2d-iphone/external/Chipmunk/xcode/build/Debug-iphoneos/libObjectiveChipmunk.a"; sourceTree = "<group>"; };
 		D21318301A58FE1C00A25DB2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../ZombieMob/Images.xcassets; sourceTree = "<group>"; };
-
-		D213183C1A592C2E00A25DB2 /* ServerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServerManager.h; path = Source/ServerManager.h; sourceTree = "<group>"; };
-		D213183D1A592C2E00A25DB2 /* ServerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServerManager.m; path = Source/ServerManager.m; sourceTree = "<group>"; };
-
 		D247F9CC1A5CCA1100A053BD /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		D247F9D21A5CCA2000A053BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D247F9D41A5CCA2800A053BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D247F9E01A5D0B0000A053BD /* MenuScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuScene.h; sourceTree = "<group>"; };
 		D247F9E11A5D0B0000A053BD /* MenuScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuScene.m; sourceTree = "<group>"; };
-
 		D2EA2F021A5DCC61004103FC /* GameCenterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameCenterManager.h; sourceTree = "<group>"; };
 		D2EA2F031A5DCC61004103FC /* GameCenterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameCenterManager.m; sourceTree = "<group>"; };
 		D2EA2F041A5DCC61004103FC /* NSDataAES256.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAES256.h; sourceTree = "<group>"; };
 		D2EA2F051A5DCC61004103FC /* NSDataAES256.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAES256.m; sourceTree = "<group>"; };
 		D2EA2F061A5DCC61004103FC /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D2EA2F071A5DCC61004103FC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
-
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,9 +147,6 @@
 				D247F9E11A5D0B0000A053BD /* MenuScene.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
-
-				D213183C1A592C2E00A25DB2 /* ServerManager.h */,
-				D213183D1A592C2E00A25DB2 /* ServerManager.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -179,9 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				B737893C1807616C0076A88C /* Source */,
-
 				D2EA2F0B1A5DCC67004103FC /* GameCenterManager */,
-
 				B77F1B4617B978D7009739AE /* Resources */,
 				9222E2B918734FF800A246C7 /* libs */,
 				B77F1CCF17B978D8009739AE /* Supporting Files */,
@@ -238,7 +223,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-
 		D2EA2F0B1A5DCC67004103FC /* GameCenterManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,7 +236,6 @@
 			name = GameCenterManager;
 			sourceTree = "<group>";
 		};
-
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,11 +271,7 @@
 						DevelopmentTeam = 2A5C47CGDP;
 						SystemCapabilities = {
 							com.apple.GameCenter = {
-
 								enabled = 1;
-
-								enabled = 0;
-
 							};
 						};
 					};
@@ -387,17 +366,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D247F9E21A5D0B0000A053BD /* MenuScene.m in Sources */,
-
 				D2EA2F0A1A5DCC61004103FC /* Reachability.m in Sources */,
 				D2EA2F081A5DCC61004103FC /* GameCenterManager.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				D2EA2F091A5DCC61004103FC /* NSDataAES256.m in Sources */,
-
-				D213183E1A592C2E00A25DB2 /* ServerManager.m in Sources */,
 				B737893F1807617C0076A88C /* AppDelegate.m in Sources */,
 				B7378994180767190076A88C /* MainScene.m in Sources */,
-
 				B73789871807631A0076A88C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,11 +414,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -474,11 +445,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-
-				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
-
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

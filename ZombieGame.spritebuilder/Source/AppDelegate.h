@@ -25,12 +25,8 @@
 
 #import <UIKit/UIKit.h>
 #import "cocos2d.h"
-<<<<<<< HEAD
-#import "GameCenterManager.h"
-=======
 
-#import <GameCenterManager/GameCenterManager.h>
->>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
+#import "GameCenterManager.h"
 
 @interface AppController : CCAppDelegate <GameCenterManagerDelegate>
 {

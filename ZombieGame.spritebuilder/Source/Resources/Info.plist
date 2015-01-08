@@ -9,22 +9,15 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIdentifier</key>
-<<<<<<< HEAD
 	<string>com.lynneokada.$(PRODUCT_NAME:rfc1034identifier)</string>
-=======
-	<string>com.apportable.${PRODUCT_NAME:rfc1034identifier}</string>
->>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
 	<string>${PRODUCT_NAME}</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
-<<<<<<< HEAD
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
-=======
->>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
@@ -37,11 +30,8 @@
 	<dict>
 		<key>accelerometer</key>
 		<true/>
-<<<<<<< HEAD
 		<key>gamekit</key>
 		<true/>
-=======
->>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
 		<key>opengles-2</key>
 		<true/>
 	</dict>

@@ -8,11 +8,7 @@
 
 #import "MainScene.h"
 #import "CCPhysics+ObjectiveChipmunk.h"
-<<<<<<< HEAD
 #import "GameCenterManager.h"
-=======
-#import "ServerManager.h"
->>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
 
 @implementation MainScene
 {
@@ -522,35 +518,6 @@
     [[CCDirector sharedDirector] replaceScene:again withTransition:transition];
 }
 
-<<<<<<< HEAD
-=======
-- (void) submit {
-    gameOverNode.visible = NO;
-    submitNode.visible = YES;
-    _submitScore.string = [NSString stringWithFormat:@"%i", (int)kills];
-}
-
-- (void)buttonText:(CCTextField*)sender {
-    NSLog(@"pressed");
-}
-
-- (void) submitt {
-    submitNode.visible = NO;
-    NSString *name = _inputName.string;
-    NSLog(@"%@",name);
-    [[ServerManager sharedManager] postScore:_submitScore.string andusername:name];
-    globalScoreNode.visible = YES;
-}
-
->>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
-- (void) exit {
-    globalScoreNode.visible = NO;
-    CCScene *again = [CCBReader loadAsScene:@"MainScene"];
-    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.3f];
-    [[CCDirector sharedDirector] replaceScene:again withTransition:transition];
-
-}
-
 - (void) gameOver
 {
     gameOverNode.visible = YES;
@@ -560,11 +527,8 @@
     
     [self loadHighscore];
     
-<<<<<<< HEAD
     [[GameCenterManager sharedManager] saveAndReportScore:kills leaderboard:@"ZombieMobLeaderboard1" sortOrder:GameCenterSortOrderHighToLow];
     
-=======
->>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
     if (kills > currentHighScore)
     {
         currentHighScore = kills;

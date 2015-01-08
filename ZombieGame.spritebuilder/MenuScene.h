@@ -8,8 +8,6 @@
 
 #import "CCNode.h"
 
-
-
 @interface MenuScene : CCNode 
 
 @end
