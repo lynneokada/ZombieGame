@@ -54,12 +54,18 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
+<<<<<<< HEAD
     [[GameCenterManager sharedManager] setDelegate:self];
     [[GameCenterManager sharedManager] setupManager];
+=======
+    [[GameCenterManager sharedManager] setupManager];
+    [[GameCenterManager sharedManager] setDelegate:self];
+>>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
     
     return YES;
 }
 
+<<<<<<< HEAD
 - (void)gameCenterManager:(GameCenterManager *)manager authenticateUser:(UIViewController *)gameCenterLoginController
 {
     UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
@@ -73,15 +79,7 @@
 }
 
 //- (void)gameCenterManager:(GameCenterManager *)manager availabilityChanged:(NSDictionary *)availabilityInformation
-//{
-//    
-//}
-//
-//- (void) gameCenterManager:(GameCenterManager *)manager error:(NSError *)error
-//{
-//    
-//}
-
+=======
 - (CCScene*) startScene
 {
     
@@ -93,4 +91,34 @@
     
 }
 
+- (void) gameCenterManager:(GameCenterManager *)manager authenticateUser:(UIViewController *)gameCenterLoginController
+{
+    
+}
+
+//- (void) gameCenterManager:(GameCenterManager *)manager availabilityChanged:(NSDictionary *)availabilityInformation
+>>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
+//{
+//    
+//}
+//
+//- (void) gameCenterManager:(GameCenterManager *)manager error:(NSError *)error
+//{
+//    
+//}
+
+<<<<<<< HEAD
+- (CCScene*) startScene
+{
+    
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/pistolSound.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/shotgunSound.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/flamethrowerSound.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/grenadeSound.wav"];
+    return [CCBReader loadAsScene:@"MenuScene"];
+    
+}
+
+=======
+>>>>>>> 202ab13ce1e1c712ab0c776bc4f24e19e926cb64
 @end
