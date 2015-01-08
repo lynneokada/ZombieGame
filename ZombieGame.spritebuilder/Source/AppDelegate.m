@@ -54,16 +54,33 @@
     
     [self setupCocos2dWithOptions:cocos2dSetup];
     
-    [[GameCenterManager sharedManager] setupManager];
     [[GameCenterManager sharedManager] setDelegate:self];
+    [[GameCenterManager sharedManager] setupManager];
     
     return YES;
 }
 
 - (void)gameCenterManager:(GameCenterManager *)manager authenticateUser:(UIViewController *)gameCenterLoginController
 {
+    UIViewController *rootViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     
+    // Login Delegate
+    [rootViewController presentViewController:gameCenterLoginController animated:YES completion:^{
+#ifdef DEBUG
+        NSLog(@"Finished Presenting GameCenter Login Controller Authentication Controller");
+#endif
+    }];
 }
+
+//- (void)gameCenterManager:(GameCenterManager *)manager availabilityChanged:(NSDictionary *)availabilityInformation
+//{
+//    
+//}
+//
+//- (void) gameCenterManager:(GameCenterManager *)manager error:(NSError *)error
+//{
+//    
+//}
 
 - (CCScene*) startScene
 {

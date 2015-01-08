@@ -534,7 +534,9 @@
     endScore.string = [NSString stringWithFormat:@"%i", (int)kills];
     
     [self loadHighscore];
-    [[GameCenterManager sharedManager] saveAndReportScore:(int)endScore leaderboard:@"Zombie Mob Leaderboard" sortOrder:GameCenterSortOrderHighToLow];
+    
+    [[GameCenterManager sharedManager] saveAndReportScore:kills leaderboard:@"ZombieMobLeaderboard1" sortOrder:GameCenterSortOrderHighToLow];
+    
     if (kills > currentHighScore)
     {
         currentHighScore = kills;
