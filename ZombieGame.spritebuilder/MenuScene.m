@@ -17,4 +17,17 @@
     [[CCDirector sharedDirector] replaceScene:start withTransition:transition];
 }
 
+- (void) tutorial
+{
+    CCScene *tutorial = [CCBReader loadAsScene:@"TutorialScene"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.3f];
+    [[CCDirector sharedDirector] replaceScene:tutorial withTransition:transition];
+}
+
+- (void) credits
+{
+    CCScene *credits = [CCBReader loadAsScene:@"CreditsScene"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.3f];
+    [[CCDirector sharedDirector] replaceScene:credits withTransition:transition];
+}
 @end
