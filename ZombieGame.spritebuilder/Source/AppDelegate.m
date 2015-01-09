@@ -85,10 +85,10 @@
 - (CCScene*) startScene
 {
     
-    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/pistolSound.wav"];
-    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/shotgunSound.wav"];
-    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/flamethrowerSound.wav"];
-    [[OALSimpleAudio sharedInstance] preloadEffect:@"ART/grenadeSound.wav"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"Published-iOS/ccbResources/ART/pistolSound.caf"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"Published-iOS/ccbResources/ART/shotgunSound.caf"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"Published-iOS/ccbResources/ART/flamethrowerSound.caf"];
+    [[OALSimpleAudio sharedInstance] preloadEffect:@"Published-iOS/ccbResources/ART/grenadeSound.caf"];
     return [CCBReader loadAsScene:@"MenuScene"];
     
 }

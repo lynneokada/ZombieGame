@@ -177,7 +177,7 @@
         leftSelected.visible = YES;
         if ([equippedWeapon isEqual:@"pistol"])
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/pistolSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/pistolSound.caf"];
             if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
             {
                 westMob.position = CGPointMake(westMob.position.x - 5, westMob.position.y);
@@ -186,7 +186,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/shotgunSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/shotgunSound.caf"];
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
                 westMob.position = CGPointMake(westMob.position.x - 20, westMob.position.y);
@@ -196,7 +196,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/flamethrowerSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/flamethrowerSound.caf"];
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
                 westMob.position = CGPointMake(westMob.position.x - 30, westMob.position.y);
@@ -206,7 +206,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/grenadeSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/grenadeSound.caf"];
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
                 westMob.position = CGPointMake(westMob.position.x - 70, westMob.position.y);
@@ -225,7 +225,7 @@
         rightSelected.visible = YES;
         if ([equippedWeapon  isEqual:@"pistol"])
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/pistolSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/pistolSound.caf"];
             if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
             {
                 eastMob.position = CGPointMake(eastMob.position.x + 5, eastMob.position.y);
@@ -234,7 +234,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/shotgunSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/shotgunSound.caf"];
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
                 eastMob.position = CGPointMake(eastMob.position.x + 20, eastMob.position.y);
@@ -244,7 +244,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/flamethrowerSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/flamethrowerSound.caf"];
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
                 eastMob.position = CGPointMake(eastMob.position.x + 30, eastMob.position.y);
@@ -254,7 +254,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/grenadeSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/grenadeSound.caf"];
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
                 westMob.position = CGPointMake(westMob.position.x - 70, westMob.position.y);
@@ -273,7 +273,7 @@
         upSelected.visible = YES;
         if ([equippedWeapon  isEqual:@"pistol"])
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/pistolSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/pistolSound.caf"];
             if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
             {
                 northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 5);
@@ -282,7 +282,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo >0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/shotgunSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/shotgunSound.caf"];
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
                 northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 20);
@@ -292,7 +292,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/flamethrowerSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/flamethrowerSound.caf"];
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
                 northMob.position = CGPointMake(northMob.position.x, northMob.position.y + 30);
@@ -302,7 +302,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/grenadeSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/grenadeSound.caf"];
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
                 westMob.position = CGPointMake(westMob.position.x - 70, westMob.position.y);
@@ -321,7 +321,7 @@
         downSelected.visible = YES;
         if ([equippedWeapon  isEqual:@"pistol"])
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/pistolSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/pistolSound.caf"];
             if (cursor.position.x > winSize.width/8 && cursor.position.x < winSize.width - winSize.width/8)
             {
                 southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 5);
@@ -330,7 +330,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"shotgun"] && shotgunAmmo > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/shotgunSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/shotgunSound.caf"];
             if (cursor.position.x > winSize.width/4 && cursor.position.x < winSize.width - winSize.width/4)
             {
                 southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 20);
@@ -340,7 +340,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"flamethrower"] && flamethrowerFuel > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/flamethrowerSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/flamethrowerSound.caf"];
             if (cursor.position.x > winSize.width/2.8 && cursor.position.x < winSize.width - winSize.width/2.8)
             {
                 southMob.position = CGPointMake(southMob.position.x, southMob.position.y - 30);
@@ -350,7 +350,7 @@
         }
         else if ([equippedWeapon isEqualToString:@"grenade"] && grenadeCount > 0)
         {
-            [[OALSimpleAudio sharedInstance] playEffect:@"ART/grenadeSound.wav"];
+            [[OALSimpleAudio sharedInstance] playEffect:@"Published-iOS/ccbResources/ART/grenadeSound.caf"];
             if (cursor.position.x > winSize.width/2.3 && cursor.position.x < winSize.width - winSize.width/2.3)
             {
                 westMob.position = CGPointMake(westMob.position.x - 70, westMob.position.y);
