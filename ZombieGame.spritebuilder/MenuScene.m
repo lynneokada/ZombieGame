@@ -30,4 +30,5 @@
     CCTransition *transition = [CCTransition transitionFadeWithDuration:0.3f];
     [[CCDirector sharedDirector] replaceScene:credits withTransition:transition];
 }
+
 @end

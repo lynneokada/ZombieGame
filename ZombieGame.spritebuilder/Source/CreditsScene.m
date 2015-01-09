@@ -10,4 +10,11 @@
 
 @implementation CreditsScene
 
+- (void) exit
+{
+    CCScene *exit = [CCBReader loadAsScene:@"MenuScene"];
+    CCTransition *transition = [CCTransition transitionFadeWithDuration:0.3f];
+    [[CCDirector sharedDirector] replaceScene:exit withTransition:transition];
+}
+
 @end

@@ -24,7 +24,7 @@
 		B77F1B4217B978D7009739AE /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B77F1B4117B978D7009739AE /* CoreText.framework */; };
 		D21318311A58FE1C00A25DB2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D21318301A58FE1C00A25DB2 /* Images.xcassets */; };
 		D23BAF941A5F6ABF00D70A0E /* TutorialScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BAF931A5F6ABF00D70A0E /* TutorialScene.m */; };
-		D23BAF971A5F6AD600D70A0E /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BAF961A5F6AD600D70A0E /* CreditsScene.m */; };
+		D23BAF9A1A5F78B800D70A0E /* CreditsScene.m in Sources */ = {isa = PBXBuildFile; fileRef = D23BAF991A5F78B800D70A0E /* CreditsScene.m */; };
 		D247F9CD1A5CCA1100A053BD /* GameKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D247F9CC1A5CCA1100A053BD /* GameKit.framework */; };
 		D247F9D31A5CCA2000A053BD /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D247F9D21A5CCA2000A053BD /* SystemConfiguration.framework */; };
 		D247F9D51A5CCA2800A053BD /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D247F9D41A5CCA2800A053BD /* Security.framework */; };
@@ -96,8 +96,8 @@
 		D21318301A58FE1C00A25DB2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ../ZombieMob/Images.xcassets; sourceTree = "<group>"; };
 		D23BAF921A5F6ABF00D70A0E /* TutorialScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TutorialScene.h; path = Source/TutorialScene.h; sourceTree = "<group>"; };
 		D23BAF931A5F6ABF00D70A0E /* TutorialScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TutorialScene.m; path = Source/TutorialScene.m; sourceTree = "<group>"; };
-		D23BAF951A5F6AD600D70A0E /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsScene.h; path = Source/CreditsScene.h; sourceTree = "<group>"; };
-		D23BAF961A5F6AD600D70A0E /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsScene.m; path = Source/CreditsScene.m; sourceTree = "<group>"; };
+		D23BAF981A5F78B800D70A0E /* CreditsScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CreditsScene.h; path = Source/CreditsScene.h; sourceTree = "<group>"; };
+		D23BAF991A5F78B800D70A0E /* CreditsScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CreditsScene.m; path = Source/CreditsScene.m; sourceTree = "<group>"; };
 		D247F9CC1A5CCA1100A053BD /* GameKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GameKit.framework; path = System/Library/Frameworks/GameKit.framework; sourceTree = SDKROOT; };
 		D247F9D21A5CCA2000A053BD /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D247F9D41A5CCA2800A053BD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -153,10 +153,10 @@
 				D247F9E11A5D0B0000A053BD /* MenuScene.m */,
 				B7378992180767190076A88C /* MainScene.h */,
 				B7378993180767190076A88C /* MainScene.m */,
+				D23BAF981A5F78B800D70A0E /* CreditsScene.h */,
+				D23BAF991A5F78B800D70A0E /* CreditsScene.m */,
 				D23BAF921A5F6ABF00D70A0E /* TutorialScene.h */,
 				D23BAF931A5F6ABF00D70A0E /* TutorialScene.m */,
-				D23BAF951A5F6AD600D70A0E /* CreditsScene.h */,
-				D23BAF961A5F6AD600D70A0E /* CreditsScene.m */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -383,7 +383,7 @@
 				B7378994180767190076A88C /* MainScene.m in Sources */,
 				D2EA2F091A5DCC61004103FC /* NSDataAES256.m in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
-				D23BAF971A5F6AD600D70A0E /* CreditsScene.m in Sources */,
+				D23BAF9A1A5F78B800D70A0E /* CreditsScene.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
